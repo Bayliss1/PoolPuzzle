@@ -6,7 +6,7 @@ namespace PoolPuzzle
     {
         static void Main(string[] args)
         {
-            Q q = new Q(Q.R.Next() == 1);
+            Q q = new Q(Q.R.Next(2) == 1);
             while (true)
             {
                 Console.Write($"{q.N1} {q.Op} {q.N2} = ");
@@ -18,7 +18,7 @@ namespace PoolPuzzle
                 if (q.Check(i))
                 {
                     Console.WriteLine("Right!");
-                    q = new Q(Q.R.Next() == 1);
+                    q = new Q(Q.R.Next(2) == 1);
                 }
                 else Console.WriteLine("Wrong! Try again.");
             }

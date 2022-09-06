@@ -12,8 +12,8 @@ namespace PoolPuzzle
         {
             if (add) Op = "+";
             else Op = "*";
-            N1 = 
-            N2 = 
+            N1 = R.Next(1, 10);
+            N2 = R.Next(1, 10);
         }
 
         public static Random R = new Random();
@@ -21,10 +21,10 @@ namespace PoolPuzzle
         public string Op { get; private set; }
         public int N2 { get; private set; }
 
-        public int Check(int a)
+        public bool Check(int a)
         {
-            if (Op == "+") return (a = N1 + N2);
-            else return (a = N1 * N2);
+            if (Op == "+") return (a == N1 + N2);
+            else return (a == N1 * N2);
         }
     }
 }
